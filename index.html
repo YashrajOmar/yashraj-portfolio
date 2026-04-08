@@ -4,102 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yashraj Omar | Software Engineer</title>
-    <meta name="description" content="Portfolio of Yashraj Omar, Electrical Engineering undergraduate at IIT Ropar and Software Engineer.">
+    <meta name="description" content="Portfolio of Yashraj Omar — Software Engineer, AI Developer, Competitive Programmer.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <canvas id="particlesCanvas"></canvas>
-    <div class="background-overlay"></div>
 
-    <!-- Toggle Music Button -->
-    <button id="musicToggle" class="music-btn" aria-label="Toggle Music" style="display: none;">
+    <!-- Music -->
+    <button id="musicToggle" class="music-btn" style="display:none;" aria-label="Toggle Music">
         <i class="fas fa-play" id="musicIcon"></i>
     </button>
-    
     <audio id="bgMusic" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Geometric Intro Screen -->
-    <div id="intro-screen" class="intro-screen">
-        <div class="geometric-container">
-            <div class="geo-shape box-1"></div>
-            <div class="geo-shape box-2"></div>
-            <div class="geo-shape box-3"></div>
-            <div class="geo-line line-1"></div>
-            <div class="geo-line line-2"></div>
-            <div class="loader-text">INITIALIZING SYSTEM...</div>
-            <button id="enter-btn" class="enter-btn hidden">ENTER ENVIRONMENT</button>
+    <!-- ============ GEOMETRIC INTRO ============ -->
+    <div id="intro-screen">
+        <div class="intro-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        <div class="intro-center">
+            <div class="intro-ring"></div>
+            <div class="intro-ring ring-2"></div>
+            <div class="intro-ring ring-3"></div>
+            <div class="intro-dot"></div>
+        </div>
+        <div class="intro-text">
+            <span class="intro-greeting">Welcome</span>
+            <button id="enter-btn">Explore Portfolio →</button>
         </div>
     </div>
 
-    <!-- Main Portfolio Content -->
-    <div id="portfolio-content" class="main-container hidden">
-        <!-- Floating Bubbles Container -->
-        <div id="bubbles-container"></div>
+    <!-- ============ PORTFOLIO ============ -->
+    <div id="portfolio" class="portfolio hidden">
 
-        <!-- Hero Section -->
-        <header class="hero-section bubble-trigger">
-            <div class="profile-image-wrapper">
-                <img src="profile.jpg" alt="Yashraj Omar" class="profile-img">
-            </div>
-            <div class="profile-text">
-                <h1 class="name">Yashraj Omar</h1>
-                <p class="title">Software Engineer | AI & Systems Developer</p>
-                <div class="contact-links">
-                    <a href="https://linkedin.com" target="_blank" class="glass-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/YashrajOmar" target="_blank" class="glass-btn"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://leetcode.com/u/YRJ47/" target="_blank" class="glass-btn"><i class="fas fa-code"></i> LeetCode</a>
-                    <a href="https://codeforces.com/profile/yrj47.timepass" target="_blank" class="glass-btn"><i class="fas fa-chart-line"></i> Codeforces</a>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-photo">
+                    <img src="profile.jpg" alt="Yashraj Omar">
+                </div>
+                <div class="hero-info">
+                    <h1>Yashraj Omar</h1>
+                    <p class="hero-role">Software Engineer · AI & Systems Developer</p>
+                    <p class="hero-bio">I build full-stack applications, ML pipelines, and high-performance data structures. Currently studying Electrical Engineering with a CS minor at <strong>IIT Ropar</strong>.</p>
+                    <div class="hero-links">
+                        <a href="mailto:yashrajomar241@gmail.com" class="link-pill"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="tel:8382820104" class="link-pill"><i class="fas fa-phone"></i> Call</a>
+                        <a href="https://www.linkedin.com/in/yashraj-omar-16310b28b/" target="_blank" class="link-pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/YashrajOmar" target="_blank" class="link-pill"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://leetcode.com/u/YRJ47/" target="_blank" class="link-pill"><i class="fas fa-code"></i> LeetCode</a>
+                        <a href="https://codeforces.com/profile/yrj47.timepass" target="_blank" class="link-pill"><i class="fas fa-chart-line"></i> Codeforces</a>
+                    </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <div class="portfolio-grid">
-            <div class="grid-left">
-                <section class="glass-panel info-card bubble-trigger">
-                    <h3><i class="fas fa-user-astronaut"></i> Profile Overview</h3>
-                    <p class="summary-text">
-                        Electrical Engineering undergrad at IIT Ropar with a minor in Computer Science. Seeking to build production-grade systems.
-                    </p>
-                </section>
-
-                <section class="glass-panel skills-card bubble-trigger">
-                    <h3><i class="fas fa-microchip"></i> Technical Stack</h3>
-                    <div class="skill-tags">
-                        <span class="tag ml">Scikit-learn</span>
-                        <span class="tag lang">C++</span>
-                        <span class="tag lang">Python</span>
-                        <span class="tag web">React</span>
-                        <span class="tag tool">Git</span>
-                    </div>
-                </section>
-            </div>
-
-            <div class="grid-right">
-                <div class="project-card glass-panel bubble-trigger">
-                    <div class="project-header">
-                        <h4>AI Recruiter</h4>
-                        <span class="date-badge">2025</span>
-                    </div>
-                    <p class="tech-stack">React, Next.js, Vapi AI</p>
-                    <p class="project-desc">Full-stack voice interview platform with real-time AI processing.</p>
+        <!-- WHAT I DO -->
+        <section class="section">
+            <h2 class="section-title flashcard">What I Do</h2>
+            <div class="skills-row">
+                <div class="skill-card flashcard">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI / Machine Learning</h3>
+                    <p>Scikit-learn · OpenCV · MediaPipe · TF-IDF · Vapi AI · OpenRouter LLMs</p>
                 </div>
-
-                <div class="project-card glass-panel bubble-trigger">
-                    <div class="project-header">
-                        <h4>Skip List</h4>
-                        <span class="date-badge">2025</span>
-                    </div>
-                    <p class="tech-stack">C++, DSA</p>
-                    <p class="project-desc">O(log N) probabilistic data structure implementation.</p>
+                <div class="skill-card flashcard">
+                    <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>Systems & Algorithms</h3>
+                    <p>C · C++ · Python · Java · Kotlin · SQL — template metaprogramming & competitive coding</p>
+                </div>
+                <div class="skill-card flashcard">
+                    <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Full-Stack Development</h3>
+                    <p>React · Next.js · Firebase · Supabase · HTML/CSS — shipping responsive web & mobile apps</p>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="section">
+            <h2 class="section-title flashcard">Featured Projects</h2>
+
+            <div class="project-showcase flashcard">
+                <div class="project-number">01</div>
+                <div class="project-body">
+                    <h3>AI Recruiter <span class="project-year">2025</span></h3>
+                    <div class="project-tags">
+                        <span>React</span><span>Next.js</span><span>Vapi AI</span><span>OpenRouter</span><span>Supabase</span>
+                    </div>
+                    <p>A full-stack voice interview platform where an AI conducts real-time interviews with &lt;2s response latency. Generates 8–10 role-specific questions from a job description and delivers automated feedback and scoring — eliminating manual review across 3+ interview modes.</p>
+                </div>
+            </div>
+
+            <div class="project-showcase flashcard">
+                <div class="project-number">02</div>
+                <div class="project-body">
+                    <h3>Probabilistic Skip List <span class="project-year">2025</span></h3>
+                    <div class="project-tags">
+                        <span>C++</span><span>Data Structures</span><span>Template Metaprogramming</span>
+                    </div>
+                    <p>A high-performance Skip List achieving O(log N) search — benchmarked 1.8× faster than std::set on 100K-element datasets. Uses shared_ptr for memory safety with a fully generic, template-based design supporting 5+ data types.</p>
+                </div>
+            </div>
+
+            <div class="project-showcase flashcard">
+                <div class="project-number">03</div>
+                <div class="project-body">
+                    <h3>Movie Recommendation Engine <span class="project-year">2024</span></h3>
+                    <div class="project-tags">
+                        <span>Python</span><span>Scikit-learn</span><span>NLP</span><span>Pandas</span>
+                    </div>
+                    <p>A content-based recommender spanning 4,800+ movies using TF-IDF vectorization and cosine similarity. Fuzzy title matching reduced failed lookups by ~40% versus exact-match. Returns top-5 results in under 200ms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINI PROJECTS -->
+        <section class="section">
+            <h2 class="section-title flashcard">More Builds</h2>
+            <div class="mini-grid">
+                <div class="mini-card flashcard">
+                    <i class="fas fa-warehouse"></i>
+                    <h4>Inventory Tracker</h4>
+                    <p>Java OOP · 1K+ SKUs · &lt;1ms search</p>
+                </div>
+                <div class="mini-card flashcard">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Rainbow Air Brush</h4>
+                    <p>Gesture-controlled · OpenCV · 30 FPS</p>
+                </div>
+                <div class="mini-card flashcard">
+                    <i class="fas fa-qrcode"></i>
+                    <h4>QR Scanner</h4>
+                    <p>Android ML Kit · &lt;500ms decode</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section">
+            <h2 class="section-title flashcard">Highlights</h2>
+            <div class="highlights-row">
+                <div class="highlight-card flashcard">
+                    <div class="highlight-value">1404</div>
+                    <div class="highlight-label">Codeforces Rating<br><small>Specialist · Global #635</small></div>
+                </div>
+                <div class="highlight-card flashcard">
+                    <div class="highlight-value">500+</div>
+                    <div class="highlight-label">LeetCode Problems<br><small>Consistent streak</small></div>
+                </div>
+                <div class="highlight-card flashcard">
+                    <div class="highlight-value">AIR 827</div>
+                    <div class="highlight-label">GATE 2026<br><small>Data Science & AI</small></div>
+                </div>
+                <div class="highlight-card flashcard">
+                    <div class="highlight-value">#342</div>
+                    <div class="highlight-label">CodeChef<br><small>Starters 187</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section class="section">
+            <h2 class="section-title flashcard">Leadership</h2>
+            <div class="leadership-row">
+                <div class="lead-card flashcard">
+                    <h4>Publicity Co-head · Advitiya'25</h4>
+                    <p>Drove outreach to 50+ colleges for IIT Ropar's technical fest, contributing to record-breaking participation.</p>
+                </div>
+                <div class="lead-card flashcard">
+                    <h4>Event Management Co-head · Zeitgeist'24</h4>
+                    <p>Led end-to-end planning and execution of 10+ events across IIT Ropar's annual cultural fest.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="portfolio-footer flashcard">
+            <p>Designed & built by Yashraj Omar · 2025</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
