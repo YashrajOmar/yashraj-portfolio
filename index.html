@@ -15,178 +15,140 @@
     <canvas id="particlesCanvas"></canvas>
     <div class="background-overlay"></div>
 
-    <!-- Toggle Music Button -->
-    <button id="musicToggle" class="music-btn" aria-label="Toggle Music">
-        <i class="fas fa-music" id="musicIcon"></i>
+    <!-- Toggle Music Button (hidden initially) -->
+    <button id="musicToggle" class="music-btn" aria-label="Toggle Music" style="display: none;">
+        <i class="fas fa-play" id="musicIcon"></i>
     </button>
     
     <audio id="bgMusic" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="main-container">
+    <!-- Intro Simulation Screen -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="ai-container">
+            <div class="ai-orb">
+                <div class="orb-core"></div>
+                <div class="orb-ring"></div>
+                <div class="orb-ring reverse"></div>
+            </div>
+            <div class="ai-dialog">
+                <p id="ai-text"></p>
+                <div class="typing-indicator" id="typing-indicator">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <button id="enter-btn" class="enter-btn hidden">Initialize Connection</button>
+        </div>
+    </div>
+
+    <!-- Main Portfolio Content -->
+    <div id="portfolio-content" class="main-container hidden">
         <!-- Hero Section -->
-        <header class="glass-panel profile-header">
+        <header class="hero-section">
             <div class="profile-image-wrapper">
                 <img src="profile.jpg" alt="Yashraj Omar" class="profile-img">
             </div>
             <div class="profile-text">
                 <h1 class="name">Yashraj Omar</h1>
-                <p class="title">Software Engineer | IIT Ropar</p>
+                <p class="title">Software Engineer | AI & Systems Developer</p>
+                <p class="tagline">Building high-impact ML pipelines and scalable full-stack applications. Codeforces Specialist & LeetCode 500+.</p>
                 <div class="contact-links">
-                    <a href="mailto:yashrajomar241@gmail.com"><i class="fas fa-envelope"></i> yashrajomar241@gmail.com</a>
-                    <a href="tel:8382820104"><i class="fas fa-phone"></i> 838-282-0104</a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/YashrajOmar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
-                    <a href="#" target="_blank"><i class="fas fa-chart-line"></i> Codeforces</a>
+                    <a href="https://linkedin.com" target="_blank" class="glass-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/YashrajOmar" target="_blank" class="glass-btn"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://leetcode.com/u/YRJ47/" target="_blank" class="glass-btn"><i class="fas fa-code"></i> LeetCode</a>
+                    <a href="https://codeforces.com/profile/yrj47.timepass" target="_blank" class="glass-btn"><i class="fas fa-chart-line"></i> Codeforces</a>
                 </div>
             </div>
         </header>
 
-        <!-- Summary Section -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-user-circle"></i> Summary</h2>
-            <p class="summary-text">
-                Electrical Engineering undergraduate at IIT Ropar with a systems-thinking mindset and hands-on strengths in algorithms, applied ML, and full-stack development — equally comfortable writing template-based C++ internals and shipping React frontends. Consistent competitive programmer — Codeforces Specialist (1404), LeetCode 500+, GATE AIR 827 (DS & AI) — with a track record of learning fast and delivering end-to-end. Seeking a SWE / ML internship to build high-impact, production-grade systems.
-            </p>
-        </section>
-
-        <!-- Education Section -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>Indian Institute of Technology Ropar</h3>
-                    <span class="date">Jun 2023 – Present</span>
-                </div>
-                <p class="subtitle">B.Tech, Electrical Engineering | Minor in Computer Science</p>
-                <ul class="bullet-list">
-                    <li><strong>CGPA:</strong> 8.05/10</li>
-                    <li><strong>JEE Advanced:</strong> AIR 4257</li>
-                    <li><strong>Location:</strong> Ropar, India</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>AI / ML</h4>
-                    <p>Scikit-learn, NumPy, Pandas, OpenCV, MediaPipe, TF-IDF, Cosine Similarity, Vapi AI, OpenRouter LLMs</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <p>C, C++, Python, Java, JavaScript, Kotlin, SQL</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Web / App</h4>
-                    <p>React, Next.js, HTML/CSS, Android (ML Kit), Firebase, Supabase</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools</h4>
-                    <p>Git, GitHub, VS Code, Android Studio, Jupyter, Colab, Figma, LaTeX</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+        <!-- Dynamic Grid Layout -->
+        <div class="portfolio-grid">
             
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>AI Recruiter</h3>
-                    <span class="date">May 2025 – Jun 2025</span>
-                </div>
-                <p class="subtitle">React, Next.js, Vapi AI, OpenRouter, Supabase</p>
-                <ul class="bullet-list">
-                    <li>Shipped a full-stack voice interview platform; Vapi AI handles real-time voice turns in &lt;2s, with 8–10 role-specific questions generated per session via OpenRouter LLMs from a user-supplied job description.</li>
-                    <li>Automated post-session feedback and scoring, eliminating manual review effort; Supabase persists auth and session history across 3+ interview modes with a responsive Next.js frontend.</li>
-                </ul>
+            <!-- Left Column: About & Skills -->
+            <div class="grid-left">
+                <!-- Education & Summary -->
+                <section class="glass-panel info-card">
+                    <h3><i class="fas fa-user-astronaut"></i> Profile Overview</h3>
+                    <p class="summary-text">
+                        Electrical Engineering undergrad at IIT Ropar with a minor in Computer Science. A systems-thinking mindset with hands-on strengths in algorithms, applied ML, and full-stack development — equally comfortable writing template-based C++ internals and shipping React frontends. Seeking to build production-grade systems.
+                    </p>
+                </section>
+
+                <section class="glass-panel skills-card">
+                    <h3><i class="fas fa-microchip"></i> Technical Stack</h3>
+                    <div class="skill-tags">
+                        <span class="tag ml">Scikit-learn</span>
+                        <span class="tag ml">NumPy/Pandas</span>
+                        <span class="tag ml">OpenCV/MediaPipe</span>
+                        <span class="tag ml">LLMs (Vapi AI, OpenRouter)</span>
+                        <span class="tag lang">C/C++</span>
+                        <span class="tag lang">Python</span>
+                        <span class="tag lang">Java/Kotlin</span>
+                        <span class="tag web">React & Next.js</span>
+                        <span class="tag web">HTML/CSS</span>
+                        <span class="tag backend">Supabase/Firebase</span>
+                        <span class="tag tool">Git/GitHub</span>
+                        <span class="tag tool">Android Studio</span>
+                    </div>
+                </section>
+
+                <section class="glass-panel info-card">
+                    <h3><i class="fas fa-trophy"></i> Highlights</h3>
+                    <ul class="highlight-list">
+                        <li><strong>Codeforces:</strong> Specialist (1404); Global Rank 635 (Round 1089 Div. 2)</li>
+                        <li><strong>LeetCode:</strong> Consistent problem-solving streak with 500+ problems solved</li>
+                        <li><strong>CodeChef:</strong> Global Rank 342 (Starters 187)</li>
+                        <li><strong>Advitiya’25:</strong> Publicity Co-head, driving outreach to 50+ colleges</li>
+                        <li><strong>Zeitgeist’24:</strong> Event Mgmt Co-head, managing 10+ events</li>
+                    </ul>
+                </section>
             </div>
 
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>Skip List Implementation</h3>
-                    <span class="date">Dec 2024 – Jan 2025</span>
+            <!-- Right Column: Featured Projects -->
+            <div class="grid-right">
+                <h3 class="section-heading"><i class="fas fa-rocket"></i> Featured Engineering</h3>
+                
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <h4>AI Recruiter</h4>
+                        <span class="date-badge">2025</span>
+                    </div>
+                    <p class="tech-stack">React, Next.js, Vapi AI, OpenRouter, Supabase</p>
+                    <p class="project-desc">Shipped a full-stack voice interview platform. Vapi AI handles real-time voice turns in &lt;2s, with dynamic role-specific questions generated per session via OpenRouter LLMs. Automated feedback and scoring eliminates manual review.</p>
                 </div>
-                <p class="subtitle">C++, Data Structures & Algorithms</p>
-                <ul class="bullet-list">
-                    <li>Built a probabilistic Skip List with O(log N) average complexity; benchmarked 1.8x faster search than std::set on 10⁵-element integer datasets, with no rotations required.</li>
-                    <li>Used shared_ptr and mt19937 for memory safety; fully template-based design supports 5+ data types with zero code duplication.</li>
-                </ul>
-            </div>
 
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>Movie Recommendation System</h3>
-                    <span class="date">Oct 2024 – Nov 2024</span>
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <h4>Probabilistic Skip List</h4>
+                        <span class="date-badge">2025</span>
+                    </div>
+                    <p class="tech-stack">C++, Data Structures & Algorithms</p>
+                    <p class="project-desc">Built a template-based Skip List with O(log N) complexity. Benchmarked 1.8x faster search than std::set on 100k-element datasets with no rotations. Utilized shared_ptr and mt19937 for memory safety.</p>
                 </div>
-                <p class="subtitle">Python, ML, NLP</p>
-                <ul class="bullet-list">
-                    <li>Content-based recommender over 4,800+ movies using TF-IDF and cosine similarity; returns top-5 genre- and title-matched results per query in under 200 ms.</li>
-                    <li>Fuzzy title matching cut failed lookups by ~40% vs. exact-match baseline; data pipeline built with Pandas and Scikit-learn.</li>
-                </ul>
-            </div>
-            
-            <!-- Minor Projects Grid -->
-            <h3 class="minor-projects-title">Minor Projects</h3>
-            <div class="minor-projects-grid">
-                <div class="minor-project-card glass-panel">
-                    <h4>Warehouse Inventory Tracker</h4>
-                    <p>Java OOP system managing 1,000+ SKUs with dynamic fee calc, real-time stock tracking, and &lt;1 ms ID/name search.</p>
-                </div>
-                <div class="minor-project-card glass-panel">
-                    <h4>Rainbow Air Brush</h4>
-                    <p>Gesture-controlled drawing tool (Python, OpenCV, MediaPipe) running at 30 FPS with real-time rainbow trail rendering.</p>
-                </div>
-                <div class="minor-project-card glass-panel">
-                    <h4>QR Scanner</h4>
-                    <p>Android ML Kit app decoding QR codes in &lt;500 ms with live camera feed and instant result display.</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Positions of Responsibility -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-users"></i> Positions of Responsibility</h2>
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>Publicity Co-head, Advitiya’25</h3>
-                    <span class="date">Nov 2024 – Feb 2025</span>
+                <div class="project-card glass-panel">
+                    <div class="project-header">
+                        <h4>Contextual Movie Recommender</h4>
+                        <span class="date-badge">2024</span>
+                    </div>
+                    <p class="tech-stack">Python, ML, NLP (Scikit-learn, Pandas)</p>
+                    <p class="project-desc">Content-based recommender engine over 4,800+ movies using TF-IDF and cosine similarity. Features fuzzy title matching cutting failed queries by 40%. Returns top results in under 200ms.</p>
                 </div>
-                <ul class="bullet-list">
-                    <li>Drove outreach to 50+ colleges; contributed to record-breaking participation in IIT Ropar’s technical fest.</li>
-                </ul>
-            </div>
-            <div class="item-block">
-                <div class="item-header">
-                    <h3>Event Management Co-head, Zeitgeist’24</h3>
-                    <span class="date">Jun 2024 – Nov 2024</span>
-                </div>
-                <ul class="bullet-list">
-                    <li>Owned end-to-end planning and execution of 10+ events across IIT Ropar’s annual cultural fest.</li>
-                </ul>
-            </div>
-        </section>
 
-        <!-- Achievements Section -->
-        <section class="glass-panel section-block">
-            <h2 class="section-title"><i class="fas fa-trophy"></i> Achievements</h2>
-            <ul class="bullet-list">
-                <li><strong>GATE 2026</strong> — AIR 827 (Data Science & AI) | AIR 3839 (CSE) among 100,000+ candidates</li>
-                <li><strong>Codeforces</strong> — Specialist (rating 1404); Global Rank 635 in Round 1089 Div. 2</li>
-                <li><strong>LeetCode</strong> — Solved 500+ problems with a consistent problem-solving streak</li>
-                <li><strong>CodeChef</strong> — Global Rank 342 in Starters 187 among thousands of participants</li>
-                <li><strong>JEE Advanced</strong> — AIR 4257 among 180,000+ candidates (2023)</li>
-            </ul>
-        </section>
+                <div class="project-card glass-panel minor-projects">
+                    <h4>More Projects</h4>
+                    <ul class="highlight-list">
+                        <li><strong>Warehouse Inventory Tracker:</strong> OOP system handling 1k+ SKUs with &lt;1ms search times. <span class="tech-stack">Java</span></li>
+                        <li><strong>Rainbow Air Brush:</strong> Gesture-controlled 30 FPS painting app rendering real-time trails. <span class="tech-stack">Python, OpenCV, MediaPipe</span></li>
+                        <li><strong>ML Kit QR Scanner:</strong> Lightning-fast decoder app with live camera feed processing in &lt;0.5s. <span class="tech-stack">Android</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
-        <footer>
-            <p>&copy; 2024 Yashraj Omar. Based in Ropar, India.</p>
+        <footer class="portfolio-footer">
+            <p>&copy; Yashraj Omar. Terminal Active.</p>
         </footer>
     </div>
 
