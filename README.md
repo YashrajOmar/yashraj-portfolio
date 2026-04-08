@@ -3,7 +3,7 @@
 A professional developer portfolio showcasing my experience in Software Engineering, Machine Learning, and Data Structures & Algorithms.
 
 ## 🚀 Live Demo
-*(Link to live portfolio if hosted via GitHub Pages)*
+[https://yashrajomar.github.io/yashraj-portfolio/](https://yashrajomar.github.io/yashraj-portfolio/)
 
 ## 🛠️ Features
 - **Modern UI/UX**: Sleek, glassmorphism design with a dark premium theme.
