@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashraj Omar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="background-animation"></div>
+
+    <main class="container">
+        <header class="profile-card glass">
+            <div class="profile-image-container">
+                <img src="profile.png" alt="Yashraj Omar" class="profile-img">
+                <div class="status-indicator"></div>
+            </div>
+            
+            <h1 class="name">Yashraj Omar</h1>
+            <p class="tagline">Tech Enthusiast • Creative Visionary</p>
+            
+            <div class="contact-info">
+                <a href="mailto:yashraj241@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> yashraj241@gmail.com
+                </a>
+                <a href="tel:8382820104" class="contact-item">
+                    <i class="fas fa-phone"></i> 8382820104
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/yashraj-omar-16310b28b/" target="_blank" class="social-btn linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+
+            <div class="music-control">
+                <button id="musicToggle" class="music-btn">
+                    <span id="musicIcon">🎵</span> <span id="musicText">Play Music</span>
+                </button>
+            </div>
+        </header>
+    </main>
+
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
