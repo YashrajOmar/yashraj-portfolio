@@ -3,53 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashraj Omar | Portfolio</title>
+    <title>Yashraj Omar | Software Engineer</title>
+    <meta name="description" content="Portfolio of Yashraj Omar, Electrical Engineering undergraduate at IIT Ropar and Software Engineer.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <canvas id="fireworksCanvas"></canvas>
-    <div class="background-animation"></div>
+    <canvas id="particlesCanvas"></canvas>
+    <div class="background-overlay"></div>
 
-    <main class="container">
-        <header class="profile-card glass">
-            <div class="profile-image-container">
-                <img src="profile.png" alt="Yashraj Omar" class="profile-img">
-                <div class="status-indicator"></div>
-            </div>
-            
-            <h1 class="name">Yashraj Omar</h1>
-            <p class="tagline">Tech Enthusiast • Creative Visionary</p>
-            
-            <div class="contact-info">
-                <a href="mailto:yashraj241@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i> yashraj241@gmail.com
-                </a>
-                <a href="tel:8382820104" class="contact-item">
-                    <i class="fas fa-phone"></i> 8382820104
-                </a>
-            </div>
+    <!-- Toggle Music Button -->
+    <button id="musicToggle" class="music-btn" aria-label="Toggle Music">
+        <i class="fas fa-music" id="musicIcon"></i>
+    </button>
+    
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
+    </audio>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/yashraj-omar-16310b28b/" target="_blank" class="social-btn linkedin">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
+    <div class="main-container">
+        <!-- Hero Section -->
+        <header class="glass-panel profile-header">
+            <div class="profile-image-wrapper">
+                <img src="profile.jpg" alt="Yashraj Omar" class="profile-img">
             </div>
-
-            <div class="music-control">
-                <button id="musicToggle" class="music-btn">
-                    <span id="musicIcon">🎵</span> <span id="musicText">Play Music</span>
-                </button>
+            <div class="profile-text">
+                <h1 class="name">Yashraj Omar</h1>
+                <p class="title">Software Engineer | IIT Ropar</p>
+                <div class="contact-links">
+                    <a href="mailto:yashrajomar241@gmail.com"><i class="fas fa-envelope"></i> yashrajomar241@gmail.com</a>
+                    <a href="tel:8382820104"><i class="fas fa-phone"></i> 838-282-0104</a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/YashrajOmar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+                    <a href="#" target="_blank"><i class="fas fa-chart-line"></i> Codeforces</a>
+                </div>
             </div>
         </header>
-    </main>
 
-    <audio id="bgMusic" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
-    </audio>
+        <!-- Summary Section -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-user-circle"></i> Summary</h2>
+            <p class="summary-text">
+                Electrical Engineering undergraduate at IIT Ropar with a systems-thinking mindset and hands-on strengths in algorithms, applied ML, and full-stack development — equally comfortable writing template-based C++ internals and shipping React frontends. Consistent competitive programmer — Codeforces Specialist (1404), LeetCode 500+, GATE AIR 827 (DS & AI) — with a track record of learning fast and delivering end-to-end. Seeking a SWE / ML internship to build high-impact, production-grade systems.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>Indian Institute of Technology Ropar</h3>
+                    <span class="date">Jun 2023 – Present</span>
+                </div>
+                <p class="subtitle">B.Tech, Electrical Engineering | Minor in Computer Science</p>
+                <ul class="bullet-list">
+                    <li><strong>CGPA:</strong> 8.05/10</li>
+                    <li><strong>JEE Advanced:</strong> AIR 4257</li>
+                    <li><strong>Location:</strong> Ropar, India</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>AI / ML</h4>
+                    <p>Scikit-learn, NumPy, Pandas, OpenCV, MediaPipe, TF-IDF, Cosine Similarity, Vapi AI, OpenRouter LLMs</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <p>C, C++, Python, Java, JavaScript, Kotlin, SQL</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Web / App</h4>
+                    <p>React, Next.js, HTML/CSS, Android (ML Kit), Firebase, Supabase</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools</h4>
+                    <p>Git, GitHub, VS Code, Android Studio, Jupyter, Colab, Figma, LaTeX</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+            
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>AI Recruiter</h3>
+                    <span class="date">May 2025 – Jun 2025</span>
+                </div>
+                <p class="subtitle">React, Next.js, Vapi AI, OpenRouter, Supabase</p>
+                <ul class="bullet-list">
+                    <li>Shipped a full-stack voice interview platform; Vapi AI handles real-time voice turns in &lt;2s, with 8–10 role-specific questions generated per session via OpenRouter LLMs from a user-supplied job description.</li>
+                    <li>Automated post-session feedback and scoring, eliminating manual review effort; Supabase persists auth and session history across 3+ interview modes with a responsive Next.js frontend.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>Skip List Implementation</h3>
+                    <span class="date">Dec 2024 – Jan 2025</span>
+                </div>
+                <p class="subtitle">C++, Data Structures & Algorithms</p>
+                <ul class="bullet-list">
+                    <li>Built a probabilistic Skip List with O(log N) average complexity; benchmarked 1.8x faster search than std::set on 10⁵-element integer datasets, with no rotations required.</li>
+                    <li>Used shared_ptr and mt19937 for memory safety; fully template-based design supports 5+ data types with zero code duplication.</li>
+                </ul>
+            </div>
+
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>Movie Recommendation System</h3>
+                    <span class="date">Oct 2024 – Nov 2024</span>
+                </div>
+                <p class="subtitle">Python, ML, NLP</p>
+                <ul class="bullet-list">
+                    <li>Content-based recommender over 4,800+ movies using TF-IDF and cosine similarity; returns top-5 genre- and title-matched results per query in under 200 ms.</li>
+                    <li>Fuzzy title matching cut failed lookups by ~40% vs. exact-match baseline; data pipeline built with Pandas and Scikit-learn.</li>
+                </ul>
+            </div>
+            
+            <!-- Minor Projects Grid -->
+            <h3 class="minor-projects-title">Minor Projects</h3>
+            <div class="minor-projects-grid">
+                <div class="minor-project-card glass-panel">
+                    <h4>Warehouse Inventory Tracker</h4>
+                    <p>Java OOP system managing 1,000+ SKUs with dynamic fee calc, real-time stock tracking, and &lt;1 ms ID/name search.</p>
+                </div>
+                <div class="minor-project-card glass-panel">
+                    <h4>Rainbow Air Brush</h4>
+                    <p>Gesture-controlled drawing tool (Python, OpenCV, MediaPipe) running at 30 FPS with real-time rainbow trail rendering.</p>
+                </div>
+                <div class="minor-project-card glass-panel">
+                    <h4>QR Scanner</h4>
+                    <p>Android ML Kit app decoding QR codes in &lt;500 ms with live camera feed and instant result display.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Positions of Responsibility -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-users"></i> Positions of Responsibility</h2>
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>Publicity Co-head, Advitiya’25</h3>
+                    <span class="date">Nov 2024 – Feb 2025</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Drove outreach to 50+ colleges; contributed to record-breaking participation in IIT Ropar’s technical fest.</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <div class="item-header">
+                    <h3>Event Management Co-head, Zeitgeist’24</h3>
+                    <span class="date">Jun 2024 – Nov 2024</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Owned end-to-end planning and execution of 10+ events across IIT Ropar’s annual cultural fest.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="glass-panel section-block">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Achievements</h2>
+            <ul class="bullet-list">
+                <li><strong>GATE 2026</strong> — AIR 827 (Data Science & AI) | AIR 3839 (CSE) among 100,000+ candidates</li>
+                <li><strong>Codeforces</strong> — Specialist (rating 1404); Global Rank 635 in Round 1089 Div. 2</li>
+                <li><strong>LeetCode</strong> — Solved 500+ problems with a consistent problem-solving streak</li>
+                <li><strong>CodeChef</strong> — Global Rank 342 in Starters 187 among thousands of participants</li>
+                <li><strong>JEE Advanced</strong> — AIR 4257 among 180,000+ candidates (2023)</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 Yashraj Omar. Based in Ropar, India.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
