@@ -2,8 +2,8 @@
 
 A professional developer portfolio showcasing my experience in Software Engineering, Machine Learning, and Data Structures & Algorithms.
 
-## 🚀 Live Demo
-[https://yashrajomar.github.io/yashraj-portfolio/](https://yashrajomar.github.io/yashraj-portfolio/)
+## 🌐 Live Demo
+https://stellular-donut-10c8d6.netlify.app/
 
 ## 🛠️ Features
 - **Modern UI/UX**: Sleek, glassmorphism design with a dark premium theme.
